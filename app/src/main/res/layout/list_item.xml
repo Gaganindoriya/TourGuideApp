@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:elevation="100dp"
+
+        card_view:cardCornerRadius="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/haridwar"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="8dp"/>
+
+            <TextView
+                android:id="@+id/place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/image"
+                android:text="Place Name"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/place"
+                android:layout_toRightOf="@id/image"
+                android:maxLines="3"
+                android:text="Har Ki Pauri is a famous ghat on the banks of the Ganges in Haridwar ..." />
+
+            <Button
+                android:id="@+id/infobtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/image"
+                android:layout_toEndOf="@+id/image"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:text="More info" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
