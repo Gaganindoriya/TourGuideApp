@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Hotels(), "Hotesl");
+        adapter.addFragment(new Hotels(), "Hotels");
         adapter.addFragment(new Famous(), "Famous");
         adapter.addFragment(new Temples(), "Temples");
         adapter.addFragment(new Ghats(), "Ghats");
