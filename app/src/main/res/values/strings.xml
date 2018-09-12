@@ -3,4 +3,88 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <array name="famous_name">
+        <item>Fun N Food Restaurant</item>
+        <item>Sati Kund Mandir</item>
+        <item>Hoshiyarpuri</item>
+        <item>Goel Sweet Haridwar</item>
+        <item>Big Ben Restraunt</item>
+        <item>Big Ben Restraunt</item>
+        <item>Invitation Restaurant</item>
+        <item>Big Ben Restaurant</item>
+
+    </array>
+    <array name="famous_description">
+        <item>NH 58, Vivek Vihar Colony, Devpura, Opp Indane oil petrol pump, Haridwar, Uttarakhand 249410</item>
+        <item>Sarva Priya Vihar Colony, Jagjeetpur, Haridwar, Uttarakhand 249404</item>
+        <item>Upper Road, Haridwar, Uttarakhand 249401</item>
+        <item>Goel Sweet Haridwar</item>
+        <item>Kankhal-Jwalapur Rd, Abhisek Nagar, Jagjeetpur, Haridwar, Uttarakhand 249404</item>
+        <item>Haridwar Main Road, Devpura, Opp.Railway Roag, Haridwar, Uttarakhand 249401</item>
+        <item>Har Ki Pauri, Haridwar, Uttarakhand 249401</item>
+        <item>Near Police Chowki, Har Ki Pauri, Haridwar, Uttarakhand 249410</item>
+    </array>
+
+    <array name="gaht_name">
+        <item>VIP Ghat - Haridwar</item>
+        <item>Ganga Ghat</item>
+        <item>Vishwakarma Ghat</item>
+        <item>Har Ki Pauri</item>
+        <item>Har Ki Pauri</item>
+        <item>haridwar ghat</item>
+        <item>Kusha Ghat</item>
+        <item>Birla Gha</item>
+    </array>
+    <array name="gaht_description">
+        <item>Haridwar - Dehradun Rd, Har Ki Pauri, Haridwar, Uttarakhand 249401</item>
+        <item>Mayapur, Haridwar, Uttarakhand 249408</item>
+        <item>Roorkee - Haridwar Rd, Gyan Lok Colony, Kankhal, Haridwar, Uttarakhand 249410</item>
+        <item>Har Ki Pauri is a famous ghat on the banks of the Ganges in Haridwar</item>
+        <item>Rodi Belwala, Birla Ghat, Haridwar, Uttarakhand 249401</item>
+        <item>Kusha Ghat, Haridwar, Uttarakhand 249401</item>
+        <item>Birla Ghat, Haridwar, Uttarakhand 249401</item>
+        <item>Bhagirathi Nagar, Bhoopatwala, Haridwar, Uttarakhand 249411</item>
+    </array>
+
+    <array name="temple_name">
+        <item>Mansa Devi</item>
+        <item>Chandi Devi Temple</item>
+        <item>Shri Maya Devi Mandir</item>
+        <item>Bharat Mata Mandir</item>
+        <item>Har Ki Pauri</item>
+        <item>Bilkeshwar Mahadev</item>
+        <item>Vaishno Devi Mandir</item>
+        <item>ISKCON Haridwar</item>
+    </array>
+    <array name="temple_description">
+        <item>Perched on a hilltop, this ancient Hindu temple honors Mansa Devi, the folk goddess of snakes.</item>
+        <item>Historic Hindu temple accessible by cable car offering picturesque mountaintop views.</item>
+        <item>Sacred Hindu sanctuary featuring colorful statues, dedicated to the Goddess Maya</item>
+        <item>This Hindu shrine dedicated to the goddess symbolizing India has a map of the undivided country.</item>
+        <item>Har Ki Pauri is a famous ghat on the banks of the Ganges in Haridwar in the Indian state of Uttarakhand</item>
+        <item>Compact, remote temple dedicated to Lord Shiva and featuring smaller temples to other gods.</item>
+        <item>Replica of the Vaishno Devi Temple in Jammu and Kashmir, with caves and tunnels leading to the shrine.</item>
+        <item>N/A</item>
+    </array>
+    <array name="name">
+        <item>Hoshiyarpuri</item>
+        <item>Goel Sweet Haridwar</item>
+        <item>Vishwakarma Ghat</item>
+        <item>Har Ki Pauri</item>
+        <item>Shri Maya Devi Mandir</item>
+        <item>Bharat Mata Mandir</item>
+        <item>Big Ben Restaurant</item>
+        <item>Mohan Ji Puri Wale</item>
+    </array>
+    <array name="description">
+        <item>Upper Road, Haridwar, Uttarakhand 249401</item>
+        <item>Goel Sweet Haridwar</item>
+        <item>Roorkee - Haridwar Rd, Gyan Lok Colony, Kankhal, Haridwar, Uttarakhand 249410</item>
+        <item>Har Ki Pauri is a famous ghat on the banks of the Ganges in Haridwar</item>
+        <item>Sacred Hindu sanctuary featuring colorful statues, dedicated to the Goddess Maya</item>
+        <item>This Hindu shrine dedicated to the goddess symbolizing India has a map of the undivided country.</item>
+        <item>Replica of the Vaishno Devi Temple in Jammu and Kashmir, with caves and tunnels leading to the shrine.</item>
+        <item>N/A</item>
+    </array>
+
 </resources>

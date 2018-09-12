@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +17,26 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import indoriya.gagan.com.tourguidefinal.MyAdapter;
+import indoriya.gagan.com.tourguidefinal.MyAdapter2;
 import indoriya.gagan.com.tourguidefinal.MyItem;
 import indoriya.gagan.com.tourguidefinal.R;
 
 
 public class Ghats extends Fragment {
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    String name[];
+    String description[];
 
-    ListView lv;
     ArrayList<MyItem> arrayList;
-    MyAdapter adapter;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+         name = getResources().getStringArray(R.array.gaht_name);
+         description= getResources().getStringArray(R.array.gaht_description);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,8 +44,6 @@ public class Ghats extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ghats, container, false);
     }
-
-
     //for initializing data
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -40,27 +51,26 @@ public class Ghats extends Fragment {
         initViews();
         loadData();
     }
-
     private void initViews() {
-        lv = getActivity().findViewById(R.id.mylistView_ghats);
+        mRecyclerView = getActivity().findViewById(R.id.my_recycler_view_ghats);
+        mRecyclerView.setHasFixedSize(true);
 
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mRecyclerView.setLayoutManager(mLayoutManager);
     }
+
     private void loadData() {
         //Array List Of songs
+        String name[] = getResources().getStringArray(R.array.gaht_name);
+        String description[] = getResources().getStringArray(R.array.gaht_description);
         arrayList = new ArrayList<>();
-        arrayList.add(new MyItem("VIP Ghat - Haridwar", "Haridwar - Dehradun Rd, Har Ki Pauri, Haridwar, Uttarakhand 249401", R.drawable.ghats));
-        arrayList.add(new MyItem("Ganga Ghat", "Mayapur, Haridwar, Uttarakhand 249408", R.drawable.ghats));
-        arrayList.add(new MyItem("Vishwakarma Ghat", " Roorkee - Haridwar Rd, Gyan Lok Colony, Kankhal, Haridwar, Uttarakhand 249410", R.drawable.ghats));
-        arrayList.add(new MyItem("Har Ki Pauri", "Har Ki Pauri is a famous ghat on the banks of the Ganges in Haridwar in the Indian state of Uttarakhand. This revered place is the major landmark of the holy city of Haridwar", R.drawable.ghats));
-        arrayList.add(new MyItem("haridwar ghat", "Rodi Belwala, Birla Ghat, Haridwar, Uttarakhand 249401", R.drawable.ghats));
-        arrayList.add(new MyItem("Kusha Ghat", "Kusha Ghat, Haridwar, Uttarakhand 249401", R.drawable.ghats));
-        arrayList.add(new MyItem("Birla Ghat", " Birla Ghat, Haridwar, Uttarakhand 249401", R.drawable.ghats));
-        arrayList.add(new MyItem("Sarvanand Ghat", " Bhagirathi Nagar, Bhoopatwala, Haridwar, Uttarakhand 249411", R.drawable.ghats));
+        for(int i=0;i<name.length;i++){
+            arrayList.add(new MyItem(name[i], description[i], R.drawable.ghats));
+        }
 
-        //creating adapter instance
-        adapter = new MyAdapter(getActivity(), arrayList);
-        //setting adabpter to listview
-        lv.setAdapter(adapter);
+        mAdapter = new MyAdapter2(getActivity(),arrayList);
+        mRecyclerView.setAdapter(mAdapter);
 
     }
 }

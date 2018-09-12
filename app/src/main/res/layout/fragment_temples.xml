@@ -6,11 +6,10 @@
     tools:context=".fragments.Temples">
 
     <!-- TODO: Update blank fragment layout -->
-    <ListView
-        android:id="@+id/mylistView_temples"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view_temples"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="64dp">
-    </ListView>
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

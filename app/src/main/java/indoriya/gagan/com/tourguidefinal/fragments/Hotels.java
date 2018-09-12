@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,15 +18,27 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import indoriya.gagan.com.tourguidefinal.MyAdapter;
+import indoriya.gagan.com.tourguidefinal.MyAdapter2;
 import indoriya.gagan.com.tourguidefinal.MyItem;
 import indoriya.gagan.com.tourguidefinal.R;
 
 
 public class Hotels extends Fragment {
 
-    ListView lv;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    String name[];
+    String description[];
+
     ArrayList<MyItem> arrayList;
-    MyAdapter adapter;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+         name = getResources().getStringArray(R.array.name);
+         description = getResources().getStringArray(R.array.description);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,8 +46,6 @@ public class Hotels extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_hotels, container, false);
     }
-
-
     //for initializing data
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -41,26 +53,25 @@ public class Hotels extends Fragment {
         initViews();
         loadData();
     }
-
     private void initViews() {
-        lv = getActivity().findViewById(R.id.mylistView_hotel);
+        mRecyclerView = getActivity().findViewById(R.id.my_recycler_view_hotels);
+        mRecyclerView.setHasFixedSize(true);
 
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mRecyclerView.setLayoutManager(mLayoutManager);
     }
 
     private void loadData() {
         //Array List Of songs
+
         arrayList = new ArrayList<>();
-        arrayList.add(new MyItem("Alpana Hotel", "Simple, chic hotel with free parking, a restaurant, an on-site generator & Puja services (fee). ...", R.drawable.hotel));
-        arrayList.add(new MyItem("Lakshya's Hotel", "Relaxed contemporary accommodations, some with Jacuzzis, plus a stylish restaurant. ...", R.drawable.hotel));
-        arrayList.add(new MyItem("Hotel Grand Shiva", "Unpretentious rooms & suites in a relaxed hotel with a cafe & an international restaurant. ...", R.drawable.hotel));
-        arrayList.add(new MyItem("Hotel Suncity Haridwar", "Down-to-earth rooms & colourful suites in an informal hotel offering free parking & Wi-Fi....", R.drawable.hotel));
-        arrayList.add(new MyItem("Classic Residency", "Upscale rooms & suites in an elegant lodging with a formal restaurant, an outdoor pool & a spa. ...", R.drawable.hotel));
-        arrayList.add(new MyItem("Hotel Golden", "Unassuming rooms with cable TV in a casual budget hotel offering parking & 24-hour room service....", R.drawable.hotel));
-        arrayList.add(new MyItem("Hotel Ganges Rivera", "Understated rooms with traditional Indian furnishings in a riverside hotel offering free breakfast. ...", R.drawable.hotel));
-        arrayList.add(new MyItem("The Haveli Hari Ganga Hotel Haridwar", "Elegant hotel with posh rooms & suites, a vegetarian restaurant, a rooftop coffee shop & a spa....", R.drawable.hotel));
-
-
-        adapter = new MyAdapter(getActivity(), arrayList);
-        lv.setAdapter(adapter);
+        for(int i=0;i<name.length;i++){
+            arrayList.add(new MyItem(name[i], description[i], R.drawable.hotel));
         }
+
+        mAdapter = new MyAdapter2(getActivity(),arrayList);
+        mRecyclerView.setAdapter(mAdapter);
+
+    }
 }

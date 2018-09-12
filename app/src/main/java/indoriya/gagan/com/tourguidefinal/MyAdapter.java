@@ -45,4 +45,6 @@ public class MyAdapter extends ArrayAdapter {
         image.setImageResource(item.getImage());
          return view;
     }
+
+
 }
